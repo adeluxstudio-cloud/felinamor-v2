@@ -320,6 +320,25 @@ em { font-style: italic; color: var(--accent); }
 .manifesto-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
 /* ============================================================
+   HISTORIA — relato editorial con ancla de año
+   ============================================================ */
+.historia-grid { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: clamp(40px, 6vw, 96px); align-items: start; }
+.historia-aside { position: sticky; top: 110px; }
+.historia .eyebrow { margin-bottom: 18px; }
+.historia-title { font-size: clamp(34px, 4.6vw, 60px); font-weight: 300; line-height: 1.04; margin-bottom: 34px; }
+.historia-year { border-top: 1px solid var(--line-accent); padding-top: 22px; display: flex; flex-direction: column; gap: 6px; }
+.hy-num { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: clamp(48px, 6vw, 76px); line-height: 1; color: var(--accent); }
+.hy-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.historia-prose p { font-size: clamp(16px, 1.35vw, 18px); color: var(--text); line-height: 1.8; margin-bottom: 22px; max-width: 62ch; }
+.historia-prose p:last-child { margin-bottom: 0; }
+.historia-lead { font-family: var(--font-serif); font-style: italic; font-size: clamp(20px, 2.2vw, 27px); line-height: 1.42; color: var(--ink); margin-bottom: 28px; }
+@media (max-width: 880px) {
+  .historia-grid { grid-template-columns: 1fr; gap: 30px; }
+  .historia-aside { position: static; }
+  .historia-year { display: inline-flex; }
+}
+
+/* ============================================================
    BANDA DE MARCA (espresso) — logo + lema
    ============================================================ */
 .brandband { position: relative; background: var(--espresso); color: var(--cream); overflow: hidden; }
