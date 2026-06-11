@@ -231,7 +231,7 @@
           'El rasgo que define al Scottish Fold son sus orejas plegadas hacia adelante, fruto de una mutación natural, que le dan una expresión dulce y de eterno cachorro.',
           'Es tranquilo, cariñoso y muy apegado. Le gusta estar donde está su gente, sin exigir demasiado. Solo trabajamos con cría responsable y seguimiento de su salud articular.'
         ],
-        ficha: [['Origen', 'Escocia'], ['Tamaño', 'Mediano · 3–6 kg'], ['Pelaje', 'Corto o largo, denso'], ['Temperamento', 'Dulce, tranquilo, apegado'], ['Energía', 'Media-baja'], ['Cuidados', 'Seguimiento articular; cepillado regular'], ['Esperanza de vida', '11 – 15 años'], ['Ideal para', 'Familias y ambientes tranquilos']]
+        ficha: [['Origen', 'Escocia'], ['Tamaño', 'Mediano · 3–6 kg'], ['Pelaje', 'Corto o largo, denso'], ['Temperamento', 'Dulce, tranquilo, apegado'], ['Energía', 'Media-baja'], ['Cuidados', 'Alimentación equilibrada, revisiones veterinarias y cepillado regular'], ['Esperanza de vida', '11 – 15 años'], ['Ideal para', 'Familias y ambientes tranquilos']]
       },
       sphynx: {
         num: '06', name: 'Sphynx', tagline: 'Esfinge sin pelaje, cercanía sin barreras.',
