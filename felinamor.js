@@ -191,8 +191,9 @@
         num: '01', name: 'Bengalí', tagline: 'Manto salvaje, alma doméstica.',
         img: 'public/assets/breeds/bengali.webp',
         desc: [
-          'El Bengalí nació del cruce entre el gato leopardo asiático y razas domésticas. Conserva el aspecto de un pequeño felino salvaje: rosetas, manto marmolado y un brillo casi metálico que los criadores llaman <em>glitter</em>.',
-          'Es atlético, curioso y conversador. Necesita juego, alturas para trepar y compañía. A cambio entrega un vínculo intenso y una energía que llena la casa. No es un gato para dejar solo todo el día.'
+          'El Bengalí nació del cruce entre el gato leopardo asiático y razas domésticas, conservando el aspecto de un pequeño felino salvaje. Destaca por su apariencia exótica, su inteligencia y su carácter activo: es atlético, curioso y conversador.',
+          'La raza se presenta en diferentes colores y patrones, como Charcoal, Silver, Snow, Brown y Melanístico, cada uno con una belleza única, sobre un manto de rosetas y marmolado con un brillo casi metálico que los criadores llaman <em>glitter</em>.',
+          'Necesita juego, espacios para trepar y compañía. A cambio entrega un vínculo intenso y una energía que llena la casa. No es un gato para dejar solo todo el día.'
         ],
         ficha: [['Origen', 'Estados Unidos'], ['Tamaño', 'Mediano a grande · 4–7 kg'], ['Pelaje', 'Corto, denso y brillante'], ['Temperamento', 'Activo, inteligente, curioso'], ['Energía', 'Muy alta'], ['Cuidados', 'Mucho juego y estímulo; cepillado mínimo'], ['Esperanza de vida', '12 – 16 años'], ['Ideal para', 'Hogares activos que disfrutan jugar']]
       },
