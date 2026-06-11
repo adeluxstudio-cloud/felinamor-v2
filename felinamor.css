@@ -716,7 +716,7 @@ a.ci-val:hover { color: var(--accent); }
 /* teaser breve en el inicio */
 .teaser-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap; margin-bottom: clamp(34px, 4vw, 52px); }
 .teaser-lead { font-size: 16px; color: var(--text); max-width: 42ch; line-height: 1.7; }
-.teaser-thumbs { display: grid; grid-template-columns: repeat(7, 1fr); gap: 16px; margin-bottom: clamp(36px, 4vw, 52px); }
+.teaser-thumbs { display: grid; grid-template-columns: repeat(8, 1fr); gap: 16px; margin-bottom: clamp(36px, 4vw, 52px); }
 .teaser-thumb { display: flex; flex-direction: column; gap: 11px; text-align: left; background: none; padding: 0; }
 .teaser-thumb .tt-img { display: block; aspect-ratio: 3/4; border-radius: 5px; overflow: hidden; border: 1px solid var(--border); position: relative; }
 .teaser-thumb .tt-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(20,14,9,.34)); opacity: 0; transition: opacity .4s var(--ease); }

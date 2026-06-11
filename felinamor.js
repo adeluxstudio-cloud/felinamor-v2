@@ -249,6 +249,15 @@
           'Dócil y sereno, sigue a su familia con calma y rara vez saca las uñas. Es uno de los gatos más recomendados para hogares con niños.'
         ],
         ficha: [['Origen', 'Estados Unidos (California)'], ['Tamaño', 'Grande · 4.5–9 kg'], ['Pelaje', 'Semilargo y sedoso'], ['Temperamento', 'Dócil, relajado, sociable'], ['Energía', 'Baja-media'], ['Cuidados', 'Cepillado regular; gato de interior'], ['Esperanza de vida', '12 – 17 años'], ['Ideal para', 'Familias con niños y hogares tranquilos']]
+      },
+      persa: {
+        num: '08', name: 'Persa Extremo', tagline: 'Lujo silencioso, carácter sereno.',
+        img: 'public/assets/breeds/persa.webp',
+        desc: [
+          'El Persa Extremo lleva al límite los rasgos del Persa clásico: cara achatada (peke-face), nariz alta y un manto largo y lujoso. Es la viva imagen de la calma felina.',
+          'Tranquilo y muy hogareño, prefiere un cojín soleado a trepar o correr. Es cariñoso sin ser demandante. Su belleza pide compromiso: cepillado diario y limpieza regular de ojos para mantener el manto y la carita impecables.'
+        ],
+        ficha: [['Origen', 'Irán (Persia)'], ['Tamaño', 'Mediano · 3.5–5.5 kg'], ['Pelaje', 'Largo, denso y sedoso'], ['Temperamento', 'Tranquilo, dulce, sedentario'], ['Energía', 'Baja'], ['Cuidados', 'Cepillado diario; limpieza de ojos'], ['Esperanza de vida', '12 – 17 años'], ['Ideal para', 'Hogares tranquilos y caseros']]
       }
     };
 
@@ -286,14 +295,23 @@
     var bdScroll = document.getElementById('bdScroll');
     var isOpen = false;
 
+    // banner ancho de la ficha: encuadre que centra la cara
+    var POS = {
+      bengali: '64% 17%', exotico: '46% 26%', mainecoon: '45% 24%',
+      scottish: '48% 25%', sphynx: '34% 30%', persa: '64% 18%',
+      munchkin: '38% 42%', ragdoll: '26% 42%'
+    };
+    // tarjetas verticales / miniaturas: encuadre más alto para ver las orejas
+    var POS_CARD = {
+      bengali: '64% 6%', exotico: '46% 8%', mainecoon: '45% 5%',
+      scottish: '48% 8%', sphynx: '34% 8%', persa: '64% 7%',
+      munchkin: '38% 42%', ragdoll: '26% 42%'
+    };
+    window.__breedPos = POS;
+
     function openBreed(slug) {
       var d = DATA[slug];
       if (!d) return;
-      var POS = {
-        bengali: '50% 20%', exotico: '50% 16%', mainecoon: '50% 14%',
-        scottish: '50% 16%', sphynx: '50% 14%',
-        munchkin: '50% 50%', ragdoll: '50% 50%'
-      };
       bdImg.src = d.img; bdImg.alt = d.name;
       bdImg.style.objectPosition = POS[slug] || '50% 30%';
       bdNum.textContent = d.num + ' — ' + d.name;
@@ -318,6 +336,20 @@
       document.body.style.overflow = '';
       isOpen = false;
     }
+
+    // aplica el encuadre por raza a tarjetas, miniaturas y spotlight
+    (function applyBreedFraming() {
+      document.querySelectorAll('.breed-card[data-breed]').forEach(function (card) {
+        var img = card.querySelector('.bc-media img');
+        if (img && POS_CARD[card.dataset.breed]) img.style.objectPosition = POS_CARD[card.dataset.breed];
+      });
+      document.querySelectorAll('.teaser-thumb[data-breed]').forEach(function (t) {
+        var img = t.querySelector('img');
+        if (img && POS_CARD[t.dataset.breed]) img.style.objectPosition = POS_CARD[t.dataset.breed];
+      });
+      var sp = document.querySelector('.spotlight-media img');
+      if (sp) sp.style.objectPosition = POS_CARD.bengali;
+    })();
 
     document.querySelectorAll('[data-breed]').forEach(function (el) {
       el.addEventListener('click', function (e) {
