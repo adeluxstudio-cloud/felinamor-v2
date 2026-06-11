@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Felinamor · Brand Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0C0A08;
+    --card: #15110D;
+    --card-elevated: #1C1814;
+    --text: #F5F1EA;
+    --text-secondary: #C9C2B5;
+    --muted: #8B8275;
+    --accent: #C8A876;
+    --accent-hover: #D4B785;
+    --accent-light: rgba(200, 168, 118, 0.08);
+    --border: #2A241D;
+    --border-bright: #3D352B;
+    --shadow: 0 24px 48px -12px rgba(0,0,0,0.6);
+    --ease: cubic-bezier(.16, 1, .3, 1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.04;
+    z-index: 1;
+    mix-blend-mode: overlay;
+  }
+
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 80px 40px 120px; position: relative; z-index: 2; }
+
+  /* --------- HEADER --------- */
+  .header { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 40px; border-bottom: 1px solid var(--border); margin-bottom: 80px; }
+  .brand-mark { font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 400; font-style: italic; letter-spacing: -0.02em; line-height: 1; }
+  .brand-mark .dot { color: var(--accent); }
+  .meta { text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+  .meta span { display: block; }
+
+  /* --------- SECTION --------- */
+  .section { margin-bottom: 96px; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 16px; }
+  .section-title em { font-style: italic; color: var(--accent); }
+  .section-intro { font-size: 17px; color: var(--text-secondary); max-width: 720px; margin-bottom: 48px; }
+
+  /* --------- COLORS --------- */
+  .palette { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+  .swatch { background: var(--card); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; transition: all 0.4s var(--ease); }
+  .swatch:hover { border-color: var(--border-bright); transform: translateY(-4px); }
+  .swatch-color { height: 120px; }
+  .swatch-info { padding: 16px 18px 20px; }
+  .swatch-name { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .swatch-hex { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--text); font-weight: 500; margin-bottom: 4px; }
+  .swatch-use { font-size: 11px; color: var(--muted); line-height: 1.4; }
+
+  /* --------- TYPE --------- */
+  .type-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+  .type-card { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 40px 32px; }
+  .type-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  .type-name { font-size: 13px; color: var(--muted); margin-bottom: 24px; font-family: 'JetBrains Mono', monospace; }
+  .type-sample-display { font-family: 'Cormorant Garamond', serif; font-size: 64px; font-weight: 400; line-height: 1; margin-bottom: 16px; }
+  .type-sample-display em { font-style: italic; }
+  .type-sample-body { font-family: 'Outfit', sans-serif; font-size: 17px; line-height: 1.5; color: var(--text-secondary); }
+  .type-sample-mono { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+  .type-weights { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--muted); }
+
+  /* --------- COPY VOICE --------- */
+  .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .voice-card { padding: 32px; border: 1px solid var(--border); border-radius: 4px; background: var(--card); }
+  .voice-card.before { border-left: 2px solid #5a3a3a; }
+  .voice-card.after { border-left: 2px solid var(--accent); }
+  .voice-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px; }
+  .voice-tag.before { color: #a87878; }
+  .voice-tag.after { color: var(--accent); }
+  .voice-text { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; line-height: 1.35; color: var(--text-secondary); }
+  .voice-text.after { color: var(--text); }
+  .voice-text em { font-style: italic; color: var(--accent); }
+
+  /* --------- PRINCIPLES --------- */
+  .principles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .principle { padding: 28px 24px; background: var(--card); border: 1px solid var(--border); border-radius: 4px; }
+  .principle-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); margin-bottom: 12px; letter-spacing: 0.15em; }
+  .principle-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; margin-bottom: 8px; line-height: 1.2; }
+  .principle-body { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+  /* --------- MOODBOARD --------- */
+  .mood-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; }
+  .mood { border-radius: 4px; min-height: 200px; background-size: cover; background-position: center; background-color: var(--card); border: 1px solid var(--border); position: relative; overflow: hidden; }
+  .mood:nth-child(1) { grid-row: span 2; min-height: 412px; }
+  .mood::after { content: attr(data-label); position: absolute; bottom: 16px; left: 16px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text); background: rgba(12,10,8,0.75); padding: 4px 10px; backdrop-filter: blur(4px); border-radius: 2px; letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* --------- STATS RETAINED --------- */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 48px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .stat { text-align: center; }
+  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 300; color: var(--accent); line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+
+  /* --------- FOOTER --------- */
+  .footer-note { margin-top: 80px; padding-top: 32px; border-top: 1px solid var(--border); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; display: flex; justify-content: space-between; }
+
+  @media (max-width: 900px) {
+    .wrap { padding: 48px 24px 80px; }
+    .header { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .meta { text-align: left; }
+    .palette { grid-template-columns: repeat(2, 1fr); }
+    .type-grid { grid-template-columns: 1fr; }
+    .voice-grid { grid-template-columns: 1fr; }
+    .principles { grid-template-columns: 1fr 1fr; }
+    .stats { grid-template-columns: 1fr; gap: 32px; }
+    .mood-grid { grid-template-columns: 1fr 1fr; }
+    .mood:nth-child(1) { grid-row: span 1; min-height: 200px; }
+    .section-title { font-size: 32px; }
+    .brand-mark { font-size: 40px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="brand-mark">felinamor<span class="dot">.</span></div>
+    <div class="meta">
+      <span>Brand Card</span>
+      <span>v1 · concept</span>
+      <span>tema oscuro</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">001 · positioning</div>
+    <h2 class="section-title">Un criadero <em>premium</em>,<br/>no una tienda de mascotas.</h2>
+    <p class="section-intro">
+      Doce años criando catorce razas exclusivas. Felinamor no compite con PetSmart ni con plataformas de adopción masiva — compite con criadores serios. El sitio debe comunicar eso desde el primer segundo: tradición, cuidado, exclusividad. Cinema, no catálogo.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="section-label">002 · palette</div>
+    <h2 class="section-title">Negro carbón con <em>champagne dorado</em>.</h2>
+    <p class="section-intro">
+      Un negro cálido (no puro #000) que respira lujo silencioso. El acento dorado solo aparece en momentos de énfasis: el nombre, los números clave, los CTA. Resto en marfil cálido para máxima legibilidad y elegancia editorial.
+    </p>
+    <div class="palette">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#0C0A08"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">bg</div>
+          <div class="swatch-hex">#0C0A08</div>
+          <div class="swatch-use">Fondo principal</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#15110D"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">card</div>
+          <div class="swatch-hex">#15110D</div>
+          <div class="swatch-use">Cards y secciones</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#C8A876"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">accent</div>
+          <div class="swatch-hex">#C8A876</div>
+          <div class="swatch-use">CTAs · nombre · cifras</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#F5F1EA"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">text</div>
+          <div class="swatch-hex">#F5F1EA</div>
+          <div class="swatch-use">Texto primario</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#C9C2B5"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">text-2</div>
+          <div class="swatch-hex">#C9C2B5</div>
+          <div class="swatch-use">Párrafos y body</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#2A241D"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">border</div>
+          <div class="swatch-hex">#2A241D</div>
+          <div class="swatch-use">Divisores sutiles</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">003 · typography</div>
+    <h2 class="section-title">Editorial. <em>Tres voces tipográficas.</em></h2>
+    <p class="section-intro">
+      Una serif lujosa para el alma del sitio (titulares y nombres), una sans-serif moderna para todo el cuerpo de texto, y una mono para detalles técnicos (cifras, etiquetas, fechas). La combinación que usan revistas de moda y galerías de arte.
+    </p>
+    <div class="type-grid">
+      <div class="type-card">
+        <div class="type-tag">display</div>
+        <div class="type-name">Cormorant Garamond</div>
+        <div class="type-sample-display"><em>Sphynx</em></div>
+        <div class="type-weights">
+          <span>Light 300 · italic</span>
+          <span>Regular 400</span>
+          <span>Medium 500</span>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-tag">body</div>
+        <div class="type-name">Outfit</div>
+        <div class="type-sample-body">
+          Raza originaria de Canadá, desarrollada a partir de una mutación genética natural. Estructura musculosa, alta inteligencia, fuerte apego a las personas.
+        </div>
+        <div class="type-weights">
+          <span>Light 300</span>
+          <span>Regular 400</span>
+          <span>Medium 500 · Bold 700</span>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-tag">mono</div>
+        <div class="type-name">JetBrains Mono</div>
+        <div class="type-sample-mono">
+          12+ AÑOS<br/>
+          2,300+ FAMILIAS<br/>
+          14 RAZAS<br/>
+          ── CALDAS, ANT
+        </div>
+        <div class="type-weights">
+          <span>Regular 400</span>
+          <span>Medium 500 · Bold 700</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">004 · voice · before / after</div>
+    <h2 class="section-title">Menos Wikipedia. <em>Más editorial.</em></h2>
+    <p class="section-intro">
+      Las descripciones actuales leen como entradas técnicas (la pista: los archivos se llaman "chat-gpt-sphynx.jpeg"). Las reescribimos en clave editorial: frases cortas con peso emocional, cifras escritas a veces, sin signos de exclamación.
+    </p>
+    <div class="voice-grid">
+      <div class="voice-card before">
+        <div class="voice-tag before">— antes</div>
+        <p class="voice-text">"FELINAMOR, tu tienda de mascotas. Tener un gato ofrece grandes beneficios para la salud física y mental, como reducir el estrés y la ansiedad..."</p>
+      </div>
+      <div class="voice-card after">
+        <div class="voice-tag after">+ después</div>
+        <p class="voice-text after">Felinamor.<br/><em>Razas felinas excepcionales.</em><br/>Doce años criando compañía.</p>
+      </div>
+
+      <div class="voice-card before">
+        <div class="voice-tag before">— antes</div>
+        <p class="voice-text">"Nuestra gran experiencia esta a tu disposición. Quizá conozcas las razas de gatos que te gustan o puede que necesites alguna guía para elegir una."</p>
+      </div>
+      <div class="voice-card after">
+        <div class="voice-tag after">+ después</div>
+        <p class="voice-text after">El gato correcto<br/><em>encuentra su hogar.</em><br/>Nosotros guiamos esa elección.</p>
+      </div>
+
+      <div class="voice-card before">
+        <div class="voice-tag before">— antes</div>
+        <p class="voice-text">"Con mas de 12 años en el mercado y mas de 2300 clientes que han depositado su confianza en nosotros"</p>
+      </div>
+      <div class="voice-card after">
+        <div class="voice-tag after">+ después</div>
+        <p class="voice-text after">Doce años. Catorce razas.<br/><em>Dos mil trescientas familias.</em></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">005 · design principles</div>
+    <h2 class="section-title">Cuatro reglas <em>no negociables.</em></h2>
+    <div class="principles">
+      <div class="principle">
+        <div class="principle-num">01</div>
+        <div class="principle-title">Cinematic, no catálogo</div>
+        <div class="principle-body">Hero scroll-driven con frames JPEG. Profundidad de campo. Close-ups macro. Cada raza vive en su propia atmósfera, no en una grilla plana.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">02</div>
+        <div class="principle-title">Silencio antes del grito</div>
+        <div class="principle-body">Sin signos de exclamación. Sin tipografía gritando en mayúsculas. El lujo se susurra. El acento dorado aparece solo donde importa.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">03</div>
+        <div class="principle-title">Cifras como prueba</div>
+        <div class="principle-body">12 años, 2300+ familias, 14 razas. Estos números se ganan visualmente: contadores mecánicos, tipografía display, sin adornos.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">04</div>
+        <div class="principle-title">Cada raza, una página</div>
+        <div class="principle-body">URL dedicada por raza (/razas/sphynx, /razas/maine-coon). SEO real. La gente busca "sphynx Medellín" en Google — tenemos que estar ahí.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">006 · moodboard</div>
+    <h2 class="section-title">Hermès con gato. <em>No PetSmart.</em></h2>
+    <p class="section-intro">
+      Referencias visuales para el director de arte. Iluminación de ventana, polvo flotando en el haz de luz, fondos limpios oscuros, profundidad de campo extrema. Mood de revista, no de e-commerce.
+    </p>
+    <div class="mood-grid">
+      <div class="mood" style="background-image:url('https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?w=900&q=80')" data-label="hero · close-up macro"></div>
+      <div class="mood" style="background-image:url('https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=600&q=80')" data-label="ojos · profundidad"></div>
+      <div class="mood" style="background-image:url('https://images.unsplash.com/photo-1561948955-570b270e7c36?w=600&q=80')" data-label="luz lateral"></div>
+      <div class="mood" style="background-image:url('https://images.unsplash.com/photo-1606214174585-fe31582dc6ee?w=600&q=80')" data-label="textura pelaje"></div>
+      <div class="mood" style="background-image:url('https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=600&q=80')" data-label="silueta cinemática"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">007 · numbers we earn</div>
+    <h2 class="section-title">Los números <em>se ganan visualmente.</em></h2>
+    <p class="section-intro">
+      Reemplazamos el "+2300 clientes / +12 años" plano por contadores mecánicos rolling (módulo Odometer de la librería). Cuando el usuario hace scroll, los dígitos giran como un velocímetro vintage.
+    </p>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">2,341</div>
+        <div class="stat-label">Familias · 2013–2025</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">12</div>
+        <div class="stat-label">Años de experiencia</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">14</div>
+        <div class="stat-label">Razas exclusivas</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <span>felinamor · brand card v1</span>
+    <span>esperando aprobación para step 2 · scene generation</span>
+  </div>
+
+</div>
+</body>
+</html>

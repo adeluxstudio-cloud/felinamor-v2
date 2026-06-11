@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Felinamor · Donde nace el amor felino</title>
+  <meta name="description" content="Criadero felino premium en Medellín, Antioquia. Doce años criando razas felinas excepcionales: Bengalí, Maine Coon, Sphynx, Ragdoll y más." />
+  <meta name="theme-color" content="#F5F0E6" />
+  <meta property="og:title" content="Felinamor · Donde nace el amor felino" />
+  <meta property="og:description" content="Criadero felino premium en Medellín, Antioquia. Razas felinas excepcionales, criadas con cuidado." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="public/assets/frames/frame-0001.jpg" />
+
+  <link rel="icon" type="image/png" href="public/assets/mark-brown.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="felinamor.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body id="top" data-tab="inicio">
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" id="nav">
+    <div class="nav-wrap">
+      <a href="#top" class="nav-brand" data-tab-link="inicio" aria-label="Felinamor · inicio">
+        <img class="nb-logo-cream" src="public/assets/mark-cream.png" alt="" />
+        <img class="nb-logo-brown" src="public/assets/mark-brown.png" alt="" />
+        <span class="nb-word">Felinamor</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a class="nav-link" href="#inicio" data-tab-link="inicio">Inicio</a></li>
+        <li><a class="nav-link" href="#razas" data-tab-link="razas">Razas</a></li>
+        <li><a class="nav-link" href="#cuidados" data-tab-link="cuidados">Cuidados</a></li>
+        <li><a class="nav-link" href="#nosotros" data-tab-link="nosotros">Nosotros</a></li>
+        <li><a class="nav-link" href="#contacto" data-tab-link="contacto">Contacto</a></li>
+      </ul>
+      <a href="tel:+573122230730" class="nav-cta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>+57 312 223 0730</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="16" x2="21" y2="16"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       PESTAÑA · INICIO
+       ============================================================ -->
+  <div class="tab-panel active" data-tab="inicio" data-screen-label="Inicio">
+
+    <!-- HERO cinemático -->
+    <section class="hero" id="inicio" data-frames="122" data-frame-base="https://felinamor-cinematic.vercel.app/assets/frames/">
+      <div class="hero-sticky" style="background:#1C140E url('public/assets/frames/frame-0001.jpg') center/cover no-repeat;">
+        <canvas id="heroCanvas" aria-hidden="true"></canvas>
+        <div class="hero-scrim"></div>
+        <div class="hero-vignette"></div>
+
+        <div class="hero-content">
+          <div class="hero-inner">
+            <img class="hero-logo" src="public/assets/logo-full-cream.png" alt="Felinamor — donde nace el amor felino" />
+            <div class="hero-eyebrow">Est. 2013 · Medellín, Antioquia</div>
+            <h1 class="hero-h1">Razas felinas<br/><em>excepcionales</em>.</h1>
+            <div class="hero-actions">
+              <a href="#razas" class="btn btn-on-dark" data-tab-link="razas">
+                Conoce nuestras razas
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+              <span class="hero-meta">Doce años · Medellín, Antioquia</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-scroll"><span class="dot"></span>desplaza</div>
+      </div>
+
+      <div class="frame-loader" id="frameLoader"><span>cargando metraje</span><div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div></div>
+    </section>
+
+    <!-- MARQUEE -->
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack">
+        <div class="marquee-content">
+          <span class="m-item">Bengalí</span><span class="m-sep m-star">✦</span>
+          <span class="m-item">Munchkin</span><span class="m-sep m-star">✦</span>
+          <span class="m-item">Gato Exótico</span><span class="m-sep m-star">✦</span>
+          <span class="m-item">Maine Coon</span><span class="m-sep m-star">✦</span>
+          <span class="m-item">Scottish Fold</span><span class="m-sep m-star">✦</span>
+          <span class="m-item">Sphynx</span><span class="m-sep m-star">✦</span>
+          <span class="m-item">Ragdoll</span><span class="m-sep m-star">✦</span>
+        </div>
+        <div class="marquee-content">
+          <span class="m-item">Bengalí</span><span class="m-sep m-star">✦</span>
+          <span class="m-item">Munchkin</span><span class="m-sep m-star">✦</span>
+          <span class="m-item">Gato Exótico</span><span class="m-sep m-star">✦</span>
+          <span class="m-item">Maine Coon</span><span class="m-sep m-star">✦</span>
+          <span class="m-item">Scottish Fold</span><span class="m-sep m-star">✦</span>
+          <span class="m-item">Sphynx</span><span class="m-sep m-star">✦</span>
+          <span class="m-item">Ragdoll</span><span class="m-sep m-star">✦</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO breve -->
+    <section class="section intro">
+      <div class="wrap">
+        <div class="intro-head reveal">
+          <div class="eyebrow">quiénes somos</div>
+          <p class="intro-lead">Un criadero pequeño en Medellín. <em>Pocas razas, mucho cuidado.</em></p>
+        </div>
+        <div class="intro-points">
+          <div class="ip reveal">
+            <div class="ip-num">01</div>
+            <h3 class="ip-title">Sanos, desde el primer día</h3>
+            <p class="ip-body">Vacunas al día, desparasitación y control veterinario antes de cada entrega.</p>
+          </div>
+          <div class="ip reveal" style="--rd:90ms">
+            <div class="ip-num">02</div>
+            <h3 class="ip-title">Criados en casa</h3>
+            <p class="ip-body">Cada camada nace y crece con nosotros, con socialización temprana y mucha calma.</p>
+          </div>
+          <div class="ip reveal" style="--rd:180ms">
+            <div class="ip-num">03</div>
+            <h3 class="ip-title">Te acompañamos</h3>
+            <p class="ip-body">Asesoría directa antes y después de la entrega. La relación empieza ahí, no termina.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEASER breve de razas -->
+    <section class="section teaser">
+      <div class="wrap">
+        <div class="teaser-head reveal">
+          <div>
+            <div class="eyebrow">nuestras razas</div>
+            <h2 class="sec-title">Siete razas, <em>cada una con su carácter</em>.</h2>
+          </div>
+          <p class="teaser-lead">Criamos pocas razas, todas con un porqué: temperamento, cuidados y compatibilidad con tu hogar. Toca una para ver su ficha, o entra a Razas y conócelas todas.</p>
+        </div>
+
+        <div class="teaser-thumbs reveal">
+          <button class="teaser-thumb" type="button" data-breed="bengali"><span class="tt-img"><img src="public/assets/breeds/bengali.webp" alt="Bengalí" loading="lazy" /></span><span class="tt-name">Bengalí</span></button>
+          <button class="teaser-thumb" type="button" data-breed="munchkin"><span class="tt-img"><img src="public/assets/breeds/munchkin.webp" alt="Munchkin" loading="lazy" /></span><span class="tt-name">Munchkin</span></button>
+          <button class="teaser-thumb" type="button" data-breed="exotico"><span class="tt-img"><img src="public/assets/breeds/exotico.webp" alt="Gato Exótico" loading="lazy" /></span><span class="tt-name">Gato Exótico</span></button>
+          <button class="teaser-thumb" type="button" data-breed="mainecoon"><span class="tt-img"><img src="public/assets/breeds/mainecoon.webp" alt="Maine Coon" loading="lazy" /></span><span class="tt-name">Maine Coon</span></button>
+          <button class="teaser-thumb" type="button" data-breed="scottish"><span class="tt-img"><img src="public/assets/breeds/scottish.webp" alt="Scottish Fold" loading="lazy" /></span><span class="tt-name">Scottish Fold</span></button>
+          <button class="teaser-thumb" type="button" data-breed="sphynx"><span class="tt-img"><img src="public/assets/breeds/sphynx.webp" alt="Sphynx" loading="lazy" /></span><span class="tt-name">Sphynx</span></button>
+          <button class="teaser-thumb" type="button" data-breed="ragdoll"><span class="tt-img"><img src="public/assets/breeds/ragdoll.webp" alt="Ragdoll" loading="lazy" /></span><span class="tt-name">Ragdoll</span></button>
+        </div>
+
+        <div class="teaser-cta reveal">
+          <a href="#razas" class="btn btn-primary" data-tab-link="razas">Ver todas las razas
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#nosotros" class="btn btn-ghost" data-tab-link="nosotros">Sobre Felinamor</a>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /inicio -->
+
+  <!-- ============================================================
+       PESTAÑA · RAZAS
+       ============================================================ -->
+  <div class="tab-panel" data-tab="razas" data-screen-label="Razas">
+    <section class="section" id="razas">
+      <div class="wrap">
+        <div class="breeds-head reveal">
+          <div>
+            <div class="eyebrow">nuestras razas</div>
+            <h2 class="sec-title">Cada raza, <em>su historia</em>.</h2>
+          </div>
+          <a href="#contacto" class="breeds-link" data-tab-link="contacto">Consultar disponibilidad
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <!-- Spotlight: Bengalí -->
+        <article class="spotlight reveal">
+          <div class="spotlight-media">
+            <span class="spotlight-tag">Raza destacada</span>
+            <img src="public/assets/breeds/bengali.webp" alt="Bengalí" loading="lazy" />
+          </div>
+          <div class="spotlight-body">
+            <div class="spotlight-num">01 — Bengalí</div>
+            <h3 class="spotlight-name">Bengalí</h3>
+            <div class="spotlight-tagline">Manto salvaje, alma doméstica.</div>
+            <p class="spotlight-desc">Pelaje corto, brillante y exótico, con patrones que recuerdan a un felino salvaje: snow, silver, charcoal, marmolado. Activo, inteligente y curioso, con gran energía. Para quien busca un gato dinámico y poco común.</p>
+            <div class="spotlight-meta">
+              <span class="chip">Gato leopardo asiático</span>
+              <span class="chip">Mediano a grande</span>
+              <span class="chip">Pelaje exótico</span>
+            </div>
+            <a href="#razas" class="spotlight-cta" data-breed="bengali">Ver la ficha del Bengalí
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Filtro por tipo de pelaje -->
+        <div class="breed-tabs reveal" role="tablist" aria-label="Filtrar razas por tipo de pelaje">
+          <button class="breed-tab is-active" type="button" data-cat="all" role="tab" aria-selected="true">Todas</button>
+          <button class="breed-tab" type="button" data-cat="corto" role="tab" aria-selected="false">Pelo corto</button>
+          <button class="breed-tab" type="button" data-cat="semilargo" role="tab" aria-selected="false">Semilargo</button>
+          <button class="breed-tab" type="button" data-cat="sinpelo" role="tab" aria-selected="false">Sin pelo</button>
+        </div>
+
+        <!-- Grid: 6 razas -->
+        <div class="breeds-grid" id="breedsGrid">
+          <article class="breed-card reveal" data-breed="munchkin" data-cat="corto" role="button" tabindex="0" aria-label="Ver ficha de Munchkin">
+            <div class="bc-media">
+              <span class="bc-num">02</span>
+              <img src="public/assets/breeds/munchkin.webp" alt="Munchkin" loading="lazy" />
+              <div class="bc-overtitle"><div class="bc-name">Munchkin</div><div class="bc-tagline">Patas cortas, personalidad enorme</div></div>
+            </div>
+            <div class="bc-body">
+              <div class="bc-meta"><span>Mutación natural</span><span class="bc-dot">·</span><span>Ágil</span></div>
+              <span class="bc-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            </div>
+          </article>
+
+          <article class="breed-card reveal" data-breed="exotico" data-cat="corto" role="button" tabindex="0" aria-label="Ver ficha de Gato Exótico" style="--rd:80ms">
+            <div class="bc-media">
+              <span class="bc-num">03</span>
+              <img src="public/assets/breeds/exotico.webp" alt="Gato Exótico" loading="lazy" />
+              <div class="bc-overtitle"><div class="bc-name">Gato Exótico</div><div class="bc-tagline">El Persa en versión práctica</div></div>
+            </div>
+            <div class="bc-body">
+              <div class="bc-meta"><span>Estados Unidos</span><span class="bc-dot">·</span><span>Aterciopelado</span></div>
+              <span class="bc-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            </div>
+          </article>
+
+          <article class="breed-card reveal" data-breed="mainecoon" data-cat="semilargo" role="button" tabindex="0" aria-label="Ver ficha de Maine Coon" style="--rd:160ms">
+            <div class="bc-media">
+              <span class="bc-num">04</span>
+              <img src="public/assets/breeds/mainecoon.webp" alt="Maine Coon" loading="lazy" />
+              <div class="bc-overtitle"><div class="bc-name">Maine Coon</div><div class="bc-tagline">El gigante gentil de Norteamérica</div></div>
+            </div>
+            <div class="bc-body">
+              <div class="bc-meta"><span>Estados Unidos</span><span class="bc-dot">·</span><span>Semilargo</span></div>
+              <span class="bc-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            </div>
+          </article>
+
+          <article class="breed-card reveal" data-breed="scottish" data-cat="corto" role="button" tabindex="0" aria-label="Ver ficha de Scottish Fold">
+            <div class="bc-media">
+              <span class="bc-num">05</span>
+              <img src="public/assets/breeds/scottish.webp" alt="Scottish Fold" loading="lazy" />
+              <div class="bc-overtitle"><div class="bc-name">Scottish Fold</div><div class="bc-tagline">Orejas plegadas, expresión dulce</div></div>
+            </div>
+            <div class="bc-body">
+              <div class="bc-meta"><span>Escocia</span><span class="bc-dot">·</span><span>Sociable</span></div>
+              <span class="bc-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            </div>
+          </article>
+
+          <article class="breed-card reveal" data-breed="sphynx" data-cat="sinpelo" role="button" tabindex="0" aria-label="Ver ficha de Sphynx" style="--rd:80ms">
+            <div class="bc-media">
+              <span class="bc-num">06</span>
+              <img src="public/assets/breeds/sphynx.webp" alt="Sphynx" loading="lazy" />
+              <div class="bc-overtitle"><div class="bc-name">Sphynx</div><div class="bc-tagline">Esfinge sin pelaje, cercanía sin barreras</div></div>
+            </div>
+            <div class="bc-body">
+              <div class="bc-meta"><span>Canadá</span><span class="bc-dot">·</span><span>Apegado</span></div>
+              <span class="bc-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            </div>
+          </article>
+
+          <article class="breed-card reveal" data-breed="ragdoll" data-cat="semilargo" role="button" tabindex="0" aria-label="Ver ficha de Ragdoll" style="--rd:160ms">
+            <div class="bc-media">
+              <span class="bc-num">07</span>
+              <img src="public/assets/breeds/ragdoll.webp" alt="Ragdoll" loading="lazy" />
+              <div class="bc-overtitle"><div class="bc-name">Ragdoll</div><div class="bc-tagline">Docilidad y elegancia, en estado puro</div></div>
+            </div>
+            <div class="bc-body">
+              <div class="bc-meta"><span>Estados Unidos</span><span class="bc-dot">·</span><span>Dócil</span></div>
+              <span class="bc-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </div><!-- /razas -->
+
+  <!-- ============================================================
+       PESTAÑA · CUIDADOS
+       ============================================================ -->
+  <div class="tab-panel" data-tab="cuidados" data-screen-label="Cuidados">
+
+    <!-- GUÍA DE CUIDADOS -->
+    <section class="section care">
+      <div class="wrap">
+        <div class="care-head reveal">
+          <div class="eyebrow">guía felinamor</div>
+          <h2 class="sec-title">Cuidar de un gato, <em>bien hecho</em>.</h2>
+          <p class="care-lead">La salud de un gato se sostiene en seis frentes que dependen unos de otros. Esta es la guía que entregamos con cada gato Felinamor: lo esencial para que tenga una vida larga, tranquila y bien acompañada. Si algo no te queda claro, escríbenos: el acompañamiento es parte de lo que hacemos.</p>
+        </div>
+
+        <div class="care-grid">
+          <article class="care-card reveal">
+            <span class="care-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h12a0 0 0 0 1 0 0 6 6 0 0 1-6 6H9a6 6 0 0 1-6-6 0 0 0 0 1 0 0Z"/><path d="M19 5c1.2.6 2 1.9 2 3.4 0 1.6-.9 2.6-2 3.6"/><path d="M7 8c0-1 .5-2 1-2.5"/><path d="M11 8c0-1 .5-2 1-2.5"/></svg></span>
+            <h3 class="care-name">Alimentación</h3>
+            <p class="care-body">Los gatos son carnívoros estrictos: necesitan proteína animal de calidad y muy pocos carbohidratos. Una dieta equilibrada y agua fresca siempre disponible son la base de su salud y su energía.</p>
+            <ul class="care-tips">
+              <li>Alimento según su etapa: gatito, adulto o senior.</li>
+              <li>Agua limpia a diario, lejos del arenero y la comida.</li>
+              <li>Evita lácteos y sobras de comida humana.</li>
+            </ul>
+          </article>
+
+          <article class="care-card reveal" style="--rd:70ms">
+            <span class="care-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h3l2-5 3 9 2.5-7 1.5 3h6"/></svg></span>
+            <h3 class="care-name">Salud</h3>
+            <p class="care-body">Vacunas, desparasitación y controles veterinarios periódicos previenen enfermedades y prolongan la vida. La esterilización, además, reduce riesgos de salud y mejora la convivencia.</p>
+            <ul class="care-tips">
+              <li>Esquema de vacunación al día (triple felina y rabia).</li>
+              <li>Desparasitación interna y externa según indicación.</li>
+              <li>Chequeo veterinario al menos una vez al año.</li>
+            </ul>
+          </article>
+
+          <article class="care-card reveal" style="--rd:140ms">
+            <span class="care-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v17M3.5 12h17M6 6l12 12M18 6 6 18"/></svg></span>
+            <h3 class="care-name">Enriquecimiento</h3>
+            <p class="care-body">Un gato estimulado es un gato equilibrado. Juegos, rascadores y zonas para trepar canalizan su energía, reducen el estrés y previenen conductas de aburrimiento o destructivas.</p>
+            <ul class="care-tips">
+              <li>Rascadores verticales y horizontales en varios puntos.</li>
+              <li>Juego diario de 10 a 15 minutos contigo.</li>
+              <li>Repisas o un árbol para observar desde lo alto.</li>
+            </ul>
+          </article>
+
+          <article class="care-card reveal">
+            <span class="care-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.5 3.5 4 6 4 8.5a4 4 0 0 1-8 0C8 9 9.5 6.5 12 3Z"/></svg></span>
+            <h3 class="care-name">Higiene</h3>
+            <p class="care-body">Buena higiene es mejor calidad de vida. El arenero limpio es innegociable, y el cepillado controla el pelo muerto y previene bolas de pelo, sobre todo en razas semilargas.</p>
+            <ul class="care-tips">
+              <li>Limpia el arenero a diario; cámbialo por completo cada semana.</li>
+              <li>Cepillado: pelo corto 1–2 veces/semana, semilargo a diario.</li>
+              <li>Revisa ojos, orejas y uñas con regularidad.</li>
+            </ul>
+          </article>
+
+          <article class="care-card reveal" style="--rd:70ms">
+            <span class="care-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5 7 8v5a5 5 0 0 0 10 0V8l3-3v8a8 8 0 0 1-16 0Z"/><path d="M10 13h.01M14 13h.01"/></svg></span>
+            <h3 class="care-name">Comportamiento</h3>
+            <p class="care-body">Entender cómo se comunica tu gato fortalece el vínculo. La cola, las orejas y el ronroneo dicen mucho. Respetar sus tiempos y su espacio evita el estrés y los problemas de conducta.</p>
+            <ul class="care-tips">
+              <li>Observa su lenguaje corporal antes de cargarlo.</li>
+              <li>Refuerza lo positivo; nunca castigues con gritos o golpes.</li>
+              <li>Mantén rutinas estables de comida, juego y descanso.</li>
+            </ul>
+          </article>
+
+          <article class="care-card reveal" style="--rd:140ms">
+            <span class="care-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v5c0 5 3.4 8.3 8 9.5 4.6-1.2 8-4.5 8-9.5V6Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <h3 class="care-name">Seguridad</h3>
+            <p class="care-body">Un hogar a prueba de gatos los protege de accidentes. Plantas tóxicas, hilos, ventanas abiertas y productos de limpieza son los riesgos más comunes dentro de casa.</p>
+            <ul class="care-tips">
+              <li>Retira plantas tóxicas (lirios, potos, sábila, entre otras).</li>
+              <li>Protege ventanas y balcones con malla.</li>
+              <li>Guarda cables, hilos y químicos fuera de su alcance.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIMEROS DÍAS EN CASA -->
+    <section class="section first-days">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="eyebrow">recién llegado</div>
+          <h2 class="sec-title">Los primeros días <em>en casa</em>.</h2>
+        </div>
+        <div class="fd-grid">
+          <div class="fd-step reveal">
+            <div class="fd-num">01</div>
+            <h3 class="fd-name">Un espacio tranquilo</h3>
+            <p class="fd-body">Prepara una habitación con su arenero, agua, comida y un escondite. Deja que explore a su ritmo, sin prisa ni visitas.</p>
+          </div>
+          <div class="fd-step reveal" style="--rd:80ms">
+            <div class="fd-num">02</div>
+            <h3 class="fd-name">Rutina y paciencia</h3>
+            <p class="fd-body">Mantén horarios fijos de comida y voz suave. La confianza se gana en días, no en horas. Cada gato tiene su tiempo.</p>
+          </div>
+          <div class="fd-step reveal" style="--rd:160ms">
+            <div class="fd-num">03</div>
+            <h3 class="fd-name">Presentaciones graduales</h3>
+            <p class="fd-body">Si hay otras mascotas o niños, preséntalos poco a poco y siempre supervisados, dejando que el gato marque el ritmo.</p>
+          </div>
+          <div class="fd-step reveal" style="--rd:240ms">
+            <div class="fd-num">04</div>
+            <h3 class="fd-name">Estamos contigo</h3>
+            <p class="fd-body">Cualquier duda durante la adaptación, escríbenos. El acompañamiento no termina en la entrega: empieza ahí.</p>
+          </div>
+        </div>
+
+        <div class="care-note reveal">
+          <p class="care-note-text">¿Dudas sobre el cuidado de tu gato? Hablemos antes, durante y después.</p>
+          <a class="btn btn-primary" href="#contacto" data-tab-link="contacto">Escríbenos
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /cuidados -->
+
+  <!-- ============================================================
+       PESTAÑA · NOSOTROS
+       ============================================================ -->
+  <div class="tab-panel" data-tab="nosotros" data-screen-label="Nosotros">
+
+    <!-- MANIFIESTO -->
+    <section class="section manifesto" id="nosotros">
+      <div class="wrap-narrow reveal">
+        <div class="eyebrow center">la idea</div>
+        <h2 class="manifesto-title">El gato correcto<br/><em>encuentra su hogar</em>.</h2>
+        <p class="manifesto-body">En Felinamor no vendemos mascotas, acompañamos elecciones. Cada raza tiene un temperamento, un cuidado, una promesa. Llevamos doce años haciendo coincidir personas con la suya. Sin urgencia, sin presión, con tiempo para conocer a quien llega y a quien adoptará.</p>
+        <div class="manifesto-cta">
+          <a href="#razas" class="btn btn-primary" data-tab-link="razas">Ver nuestras razas
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#contacto" class="btn btn-ghost" data-tab-link="contacto">Hablar con nosotros</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANDA DE MARCA (espresso) -->
+    <section class="brandband">
+      <div class="brandband-inner">
+        <div class="brandband-logo reveal">
+          <img src="public/assets/logo-cream.png" alt="Felinamor — donde nace el amor felino" />
+        </div>
+        <div class="reveal" style="--rd:120ms">
+          <div class="eyebrow">la marca</div>
+          <p class="brandband-quote">Donde nace el <span>amor felino</span>.</p>
+          <p class="brandband-note">Un criadero pequeño y especializado. Cada camada nace en casa, con socialización temprana, control veterinario y la calma de quien no tiene prisa. La relación no termina en la entrega: empieza ahí.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="section stats">
+      <div class="wrap">
+        <div class="reveal">
+          <div class="eyebrow">por los números</div>
+          <h2 class="sec-title">Doce años. <em>Cada raza, su carácter.</em><br/>Más de dos mil familias.</h2>
+        </div>
+        <div class="stats-grid reveal">
+          <div class="stat-card">
+            <div class="odometer" aria-label="2341">
+              <span class="digit-wrap" data-target="2" data-delay="0"><span class="digit-strip"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></span></span>
+              <span class="digit-wrap" data-target="3" data-delay="0.12"><span class="digit-strip"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></span></span>
+              <span class="digit-wrap" data-target="4" data-delay="0.24"><span class="digit-strip"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></span></span>
+              <span class="digit-wrap" data-target="1" data-delay="0.36"><span class="digit-strip"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></span></span>
+              <span class="plus">+</span>
+            </div>
+            <div class="stat-label">Familias · 2013 — 2025</div>
+          </div>
+          <div class="stat-card">
+            <div class="odometer" aria-label="12">
+              <span class="digit-wrap" data-target="1" data-delay="0"><span class="digit-strip"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></span></span>
+              <span class="digit-wrap" data-target="2" data-delay="0.12"><span class="digit-strip"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></span></span>
+              <span class="plus">+</span>
+            </div>
+            <div class="stat-label">Años criando con cuidado</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-word">Selectas</div>
+            <div class="stat-label">Razas que criamos</div>
+            <div class="stat-breeds">Bengalí · Munchkin · Gato Exótico · Maine&nbsp;Coon<br/>Scottish&nbsp;Fold · Sphynx · Ragdoll</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="section">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="eyebrow">cómo trabajamos</div>
+          <h2 class="sec-title">Tres pasos. <em>Sin prisa.</em></h2>
+        </div>
+        <div class="process-grid">
+          <div class="proc-step reveal">
+            <div class="proc-num">01</div>
+            <h3 class="proc-name">Conversamos</h3>
+            <p class="proc-body">Te conocemos. Entendemos tu hogar, tu rutina, tus expectativas. Te recomendamos la raza que mejor encaja, o te decimos honestamente que ahora no es el momento.</p>
+          </div>
+          <div class="proc-step reveal" style="--rd:90ms">
+            <div class="proc-num">02</div>
+            <h3 class="proc-name">Cuidamos al gato</h3>
+            <p class="proc-body">Todos nuestros ejemplares llegan con vacunas al día, control veterinario y socialización temprana. Te entregamos un compañero sano, no una transacción.</p>
+          </div>
+          <div class="proc-step reveal" style="--rd:180ms">
+            <div class="proc-num">03</div>
+            <h3 class="proc-name">Entregamos en casa</h3>
+            <p class="proc-body">Llevamos el gato a tu hogar en Colombia. Acompañamos los primeros días con asesoría directa. La relación no termina en la entrega, empieza ahí.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="section">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="eyebrow">familias felinamor</div>
+          <h2 class="sec-title">Lo que dicen <em>quienes adoptaron</em>.</h2>
+        </div>
+        <div class="testi-grid">
+          <figure class="testi-card reveal">
+            <svg class="quote-mark" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h3v3H7v3H4V10c0-1.66 1.34-3 3-3zm10 0h3v3h-3v3h-3V10c0-1.66 1.34-3 3-3z"/></svg>
+            <blockquote>Nos alegró la vida desde que llegó a nuestro hogar, ha sido muy sano y muy juicioso.</blockquote>
+            <figcaption><span class="testi-raza">Maine Coon</span> · 2024</figcaption>
+          </figure>
+          <figure class="testi-card reveal" style="--rd:90ms">
+            <svg class="quote-mark" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h3v3H7v3H4V10c0-1.66 1.34-3 3-3zm10 0h3v3h-3v3h-3V10c0-1.66 1.34-3 3-3z"/></svg>
+            <blockquote>El personal de Felinamor siempre estuvo en contacto con nosotros al momento de la entrega de nuestro gatico, son muy confiables.</blockquote>
+            <figcaption><span class="testi-raza">Ragdoll</span> · 2024</figcaption>
+          </figure>
+          <figure class="testi-card reveal" style="--rd:180ms">
+            <svg class="quote-mark" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h3v3H7v3H4V10c0-1.66 1.34-3 3-3zm10 0h3v3h-3v3h-3V10c0-1.66 1.34-3 3-3z"/></svg>
+            <blockquote>Mis hijos están felices con su gatico, no hay mejor regalo que una mascota.</blockquote>
+            <figcaption><span class="testi-raza">Gato Exótico</span> · 2023</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /nosotros -->
+
+  <!-- ============================================================
+       PESTAÑA · CONTACTO
+       ============================================================ -->
+  <div class="tab-panel" data-tab="contacto" data-screen-label="Contacto">
+    <section class="section contact" id="contacto">
+      <div class="wrap">
+        <div class="contact-grid">
+          <div class="reveal">
+            <div class="eyebrow">empieza hoy</div>
+            <h2 class="contact-title">¿Ya sabes qué raza? <em>Búscala</em>.<br/>¿No la conoces? <em>La encontramos</em>.</h2>
+            <p class="contact-body">No hay catálogo que reemplace una conversación. Cuéntanos cómo es tu hogar y te ayudamos a encontrar la raza que coincide. Sin presión, sin urgencia comercial.</p>
+            <div class="contact-actions">
+              <a href="https://wa.me/573122230730?text=Hola%20Felinamor%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20las%20razas%20disponibles." target="_blank" rel="noopener" class="btn btn-primary">Escribir por WhatsApp
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.48-.88-.78-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.7.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.07-.12-.27-.2-.57-.35z"/></svg>
+              </a>
+              <a href="tel:+573122230730" class="btn btn-ghost">Llamar ahora</a>
+            </div>
+          </div>
+
+          <aside class="contact-info reveal" style="--rd:120ms">
+            <div class="ci-row">
+              <div class="ci-key">Teléfono / WhatsApp</div>
+              <a class="ci-val" href="tel:+573122230730">+57 312 223 0730</a>
+            </div>
+            <div class="ci-row">
+              <div class="ci-key">Correo</div>
+              <a class="ci-val" href="mailto:Feliinamor@gmail.com">Feliinamor@gmail.com</a>
+            </div>
+            <div class="ci-row">
+              <div class="ci-key">Horario</div>
+              <div class="ci-val small">Lunes a sábado · 8:00 — 18:00</div>
+            </div>
+            <div class="ci-row">
+              <div class="ci-key">Ubicación</div>
+              <div class="ci-val small">Medellín, Antioquia — Colombia</div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </div><!-- /contacto -->
+
+  <!-- ============ FOOTER (siempre visible) ============ -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand-col">
+          <img class="foot-logo" src="public/assets/logo-brown.png" alt="Felinamor" />
+          <p class="foot-tagline">Donde nace el amor felino.</p>
+          <p class="foot-blurb">Criadero felino premium en Medellín, Antioquia. Doce años criando razas excepcionales, con cuidado y sin prisa.</p>
+          <div class="foot-social">
+            <a href="https://www.instagram.com/felinamor" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://www.tiktok.com/@felinamor_" target="_blank" rel="noopener" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+            <a href="https://www.facebook.com/share/1AXmDKL5sy/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          </div>
+        </div>
+        <div class="foot-col">
+          <div class="foot-label">Navegación</div>
+          <ul>
+            <li><a href="#inicio" data-tab-link="inicio">Inicio</a></li>
+            <li><a href="#razas" data-tab-link="razas">Razas</a></li>
+            <li><a href="#cuidados" data-tab-link="cuidados">Cuidados</a></li>
+            <li><a href="#nosotros" data-tab-link="nosotros">Nosotros</a></li>
+            <li><a href="#contacto" data-tab-link="contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <div class="foot-label">Contacto</div>
+          <ul>
+            <li><a href="mailto:Feliinamor@gmail.com">Feliinamor@gmail.com</a></li>
+            <li><a href="tel:+573122230730">+57 312 223 0730</a></li>
+            <li class="muted">Lun a sáb · 8:00 — 18:00</li>
+            <li class="muted">Medellín, Antioquia — Colombia</li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <div class="foot-label">Razas destacadas</div>
+          <ul>
+            <li><a href="#razas" data-breed="bengali">Bengalí</a></li>
+            <li><a href="#razas" data-breed="mainecoon">Maine Coon</a></li>
+            <li><a href="#razas" data-breed="sphynx">Sphynx</a></li>
+            <li><a href="#razas" data-breed="ragdoll">Ragdoll</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Felinamor — Medellín, Antioquia, Colombia.</span>
+        <span class="muted">Criadero felino premium · 12+ años · 2.300+ familias</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ FICHA DE RAZA (página dedicada) ============ -->
+  <div class="breed-detail" id="breedDetail" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="bdName">
+    <div class="bd-scroll" id="bdScroll">
+      <header class="bd-bar">
+        <button class="bd-back" id="bdBack" type="button">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Volver a las razas
+        </button>
+        <img class="bd-brand" src="public/assets/logo-cream.png" alt="Felinamor" />
+      </header>
+
+      <div class="bd-hero">
+        <img id="bdImg" alt="" />
+        <div class="bd-hero-scrim"></div>
+        <div class="bd-hero-overlay wrap">
+          <div class="bd-num" id="bdNum"></div>
+          <h2 class="bd-name" id="bdName"></h2>
+          <div class="bd-tagline" id="bdTagline"></div>
+        </div>
+      </div>
+
+      <div class="bd-body wrap">
+        <div class="bd-desc">
+          <div class="eyebrow" id="bdEyebrow">la raza</div>
+          <div id="bdDesc"></div>
+        </div>
+        <aside class="bd-ficha">
+          <div class="bd-ficha-title">Ficha rápida</div>
+          <div class="bd-ficha-list" id="bdFicha"></div>
+          <a class="btn btn-primary bd-wa" id="bdWa" target="_blank" rel="noopener">
+            <span id="bdWaText">Preguntar por esta raza</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.48-.88-.78-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.7.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.07-.12-.27-.2-.57-.35z"/></svg>
+          </a>
+          <a class="bd-call" id="bdCall" href="tel:+573122230730">o llámanos: +57 312 223 0730</a>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ WHATSAPP FLOAT ============ -->
+  <a href="https://wa.me/573122230730?text=Hola%20Felinamor%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20las%20razas%20disponibles." target="_blank" rel="noopener" class="wa-float" aria-label="Escribir por WhatsApp">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="#FFFAF1" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+    <span class="wa-tip">Hablemos</span>
+  </a>
+
+  <script src="felinamor.js"></script>
+</body>
+</html>
